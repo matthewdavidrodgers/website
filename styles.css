@@ -8,99 +8,88 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', Helvetica, sans-serif;
 }
 
-/* background animation */
-html {
-  height: 100vh;
-  background: linear-gradient(-45deg, #FFF, 12%, #A2A2A2, 88%, #FFF);
-  background-size: 900% 900%;
-  animation-name: wipe;
-  animation-duration: 1000ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes wipe {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-
 /* basic layout */
-.container {
+.page {
   max-width: 900px;
   margin: 0 auto 30px;
   padding: 10px;
 }
 
-/* title styles */
-.title {
-  display: flex;
-  flex-direction: column;
+header {
   margin-bottom: 30px;
 }
 
-.title > span {
+/* logo styles */
+.logo, .logo > a {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.logo > span, .logo > a > span {
   line-height: 1;
 }
 
-.title > span:nth-of-type(2) {
+.logo > span:nth-of-type(2), .logo > a > span:nth-of-type(2) {
   margin-left: 30px;
 }
 
-.title > span:nth-of-type(3) {
+.logo > span:nth-of-type(3), .logo > a > span:nth-of-type(3) {
   margin-left: 60px;
 }
 
 /* link styles */
-.links {
+.inline-link-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: 0;
   padding: 0;
 }
 
-.links > li {
+.inline-link-list > li {
   display: block;
   margin: 5px 20px;
 }
 
-.links a {
+.inline-link-list a {
   color: #000;
   opacity: 0.5;
   transition: opacity 300ms ease-out;
 }
 
-.links a:hover {
+.inline-link-list a:hover {
   opacity: 1;
 }
 
 /* desktop overrides */
 @media only screen and (min-width: 615px) {
-  .container {
+  .page {
     margin: 100px auto;
   }
 
-  .title {
+  header {
     margin-bottom: 50px;
   }
-
-  .links {
-    justify-content: flex-start;
+  footer {
     margin: 30px 0;
   }
 
-  .links > li {
+  .inline-link-list {
+    justify-content: flex-start;
+  }
+
+  .inline-link-list > li {
     margin: 0;
   }
 
-  .links > li:not(:first-of-type) {
+  .inline-link-list > li:not(:first-of-type) {
     margin-left: 20px;
   }
 
-  .links > li:not(:last-of-type) {
+  .inline-link-list > li:not(:last-of-type) {
     margin-right: 20px;
   }
 }
