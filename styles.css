@@ -15,8 +15,19 @@ h1, h2, h3, h4, h5 {
   padding: 10px;
 }
 
+/* header styles */
 header {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  font-size: 20px;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  margin-top: 20px;
+  margin-right: 30px;
 }
 
 /* logo styles */
@@ -40,6 +51,10 @@ header {
   margin-left: 60px;
 }
 
+footer {
+  margin: 30px 0;
+}
+
 /* link styles */
 .inline-link-list {
   display: flex;
@@ -54,14 +69,43 @@ header {
   margin: 5px 20px;
 }
 
-.inline-link-list a {
+a {
   color: #000;
   opacity: 0.5;
   transition: opacity 300ms ease-out;
 }
 
-.inline-link-list a:hover {
+a:hover {
   opacity: 1;
+}
+
+/* page specific styles */
+#posts .link-list {
+  padding: 0;
+}
+
+#posts .link-list > li {
+  display: block;
+}
+
+#posts .link-list > li > a {
+  text-decoration: none;
+}
+
+#posts .link-list > li .link-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#posts .link-list > li .link-title {
+  flex: 1;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+#posts .link-list > li .link-desc {
+  font-size: 16px;
+  text-decoration: none;
 }
 
 /* desktop overrides */
@@ -72,9 +116,11 @@ header {
 
   header {
     margin-bottom: 50px;
+    flex-direction: row;
+    align-items: flex-end;
   }
   footer {
-    margin: 30px 0;
+    margin: 50px 0 30px;
   }
 
   .inline-link-list {
@@ -91,5 +137,10 @@ header {
 
   .inline-link-list > li:not(:last-of-type) {
     margin-right: 20px;
+  }
+
+  #posts .link-list > li .link-header {
+    flex-direction: row;
+    align-items: flex-end;
   }
 }
