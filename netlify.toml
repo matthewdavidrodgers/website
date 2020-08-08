@@ -1,0 +1,8 @@
+[build]
+  command = rm posts/-*.html
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+
+  status = 302
