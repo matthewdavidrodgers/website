@@ -6,6 +6,18 @@ draft: true
 
 ![Logos (Minecraft, Amazon Web Services, Discord, Go)](/images/bot-logos-raw.png)
 
+How's this look?
+
+```go
+package main
+
+import "fmt"
+
+func main () {
+  fmt.Println("Hey! It worked!")
+}
+```
+
 2020 has not been especially \*ahem\* bright for the most part. Very much has gone wrong, and very much continues to go worse. But I found a bit of solace after setting up Discord server for some of my friends and I.
 
 If you're unfamiliar, [Discord](https://discord.com/) is a essentially a big chat room-- like Slack or Microsoft Teams or GroupMe-- but geared towards gamers. Communication is organized around "servers", which have any number of "channels" for specific topics, including voice channels, which you join with any microphone equipped device. These voice channels are great for the pandemic era; I've used them for gaming, hosting virtual movie nights, and just catching up.

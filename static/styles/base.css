@@ -97,6 +97,12 @@ article img {
   width: 100%;
 }
 
+/* code styles */
+.highlight > pre {
+  padding: 10px;
+  border-radius: 8px;
+}
+
 /* page specific styles */
 #posts .link-list {
   padding: 0;
