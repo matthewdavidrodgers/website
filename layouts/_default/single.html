@@ -1,0 +1,13 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+  <main id="post">
+    <article id="{{ .File.BaseFileName }}">
+      <div>{{ .PublishDate.Format "01/02/2006" }}</div>
+      <h1>{{ .Title }}</h1>
+      <div>
+        {{ .Content }}
+      </div>
+    </article>
+  </main>
+{{ end }}

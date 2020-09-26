@@ -1,0 +1,18 @@
+<header>
+  <h1 class="logo">
+    {{ $currentPage := . }}
+    {{ with .GetPage "/" }}
+      <a href="/" class="{{ if eq . $currentPage }}active{{end}}">
+        <span>Matthew</span>
+        <span>David</span>
+        <span>Rodgers</span>
+      </a>
+    {{ end }}
+  </h1>
+  <nav>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent `main` . }}active{{ end }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>
