@@ -6,27 +6,26 @@ draft: false
 
 ![Logos (Minecraft, Amazon Web Services, Discord, Go)](/images/bot-logos-raw.png)
 
-## Bits of community
+## The boys and their blocks
 2020 has not been especially \*ahem\* bright for the most part. But I was lucky to find a bit of solace after setting up a Discord server, giving my friends and I a place for a bit of digital community.
 
 If you're unfamiliar, [Discord](https://discord.com/) is a essentially a big chat room-- like Slack or Microsoft Teams or GroupMe-- but geared towards gamers.
 
-Communication is organized around "servers", which have any number of "channels" for specific topics, including voice channels, which are simple to pop into and talk with others. There's even support for streaming your computer screen and video calling, which has been perfect for our always-apart era.
+Communication is organized around "servers," which have any number of "channels" for specific topics, including voice channels, which are simple to pop into and talk with others. There's even support for streaming your computer screen and video calling, which has been perfect for our always-apart era.
 
-As for the gaming part, most of us couldn't really be called "gamers". But we did end up playing one game together frequently: Minecraft.
+As for the gaming part, most of us couldn't really be called "gamers." But we did end up playing one game together frequently: Minecraft.
 
-## The boys and their blocks
 Minecraft was perfect for us mainly due to its simplicity. The basic controls are great since many of us don't often game and can't be expected to keep up with anything hardcore; its system requirements are minimal, which was essential since only a few of us were playing on anything other than standard laptops; but mostly, the rules of the game are perfectly relaxed. You're not really expected do anything other than make a nice house to sleep in and... make it nicer. 
 
 The trouble comes in when you want to play Minecraft _together_. While it's totally possible to join a networked game and interact with other players, there's little ready-to-go infrastructure; you can't just click a button and hop into a networked match like you'd expect with multiplayer games like Call of Duty.
 
-Microsoft (Minecraft's owners) have added some ways to play online, but those features are separate to the game, almost like an extension.
+Microsoft (Minecraft's owners) have added some ways to play online, but those features exist separately to the game, almost like an extension.
 
-It comes down to this. It's easy to play Minecraft with your friends - as long as you're hosting the server.
+It comes down to this: It's easy to play Minecraft with your friends - as long as you're hosting the server.
 
-Minecraft provides [server software](https://www.minecraft.net/en-us/download/) that can create a networked world, but unless you've got a fairly good grip on ip networking and os fundamentals, it can be pretty tough to attempt.
+Minecraft provides [server software](https://www.Minecraft.net/en-us/download/) that can create a networked world, but unless you've got a fairly good grip on IP networking and OS fundamentals, it can be pretty tough to attempt.
 
-It's out of the scope of this post, but setting up a custom Minecraft server involved opening a port on my home router's firewall, and forwarding that port to my PC (named Marilyn ❤️) which ran the Java server code. Anyone that wanted to play on my server would open a direct connection to my router's public ipv4 address.
+It's out of the scope of this post, but setting up a custom Minecraft server involved opening a port on my home router's firewall, and forwarding that port to my PC (named Marilyn ❤️) which ran the Java server code. Anyone that wanted to play on my server would open a direct connection to my router's public IPv4 address.
 
 This worked great! We had a persistent world to meet up in and fool around.
 
@@ -41,7 +40,7 @@ My thinking was pretty simple: I'm just starting and stopping a Java program on 
 But doing so would give me less access to the program and its execution. __Can I set up a bot on the cloud instance, and send it commands via Discord?__
 
 ## Head in the clouds
-I find few things as daunting as dealing with the behemoth that is AWS. So many services. So many obscure docs. One glance at the management console and I have to fight a basal urge to give up computing and live the rest of my days as a monk, unbothered by phrases like "outbound DNS rules" and "allocate dedicated hosts"
+I find few things as daunting as dealing with the behemoth that is AWS. So many services. So many obscure docs. One glance at the management console and I have to fight a basal urge to give up computing and live the rest of my days as a monk, unbothered by phrases like "outbound DNS rules" and "allocate dedicated hosts."
 
 So I did my best to use a more simple service, one that abstracts over a provider like AWS.
 
@@ -53,7 +52,7 @@ I don't pretend even for a second that I accomplished it in the optimal-- or eve
 
 After setting up some inbound DNS rules (\*shudder\*) to allow people to connect, I could finally see that this experiment was on the path to being worth it. I gave the public DNS name of the instance to a friend, and they could connect in to our world!
 
-Even better, it was free! The free tier for EC2 instances gives you 750 hours a month of uptime each month, for a year. That's just over 31 days a month, so as long as I only ever had one instance running at a time, I'll be in the clear!
+Even better, it was free! The free tier for EC2 instances gives you 750 hours a month of uptime each month for a year. That's just over 31 days a month, so as long as I only ever had one instance running at a time, I'm in the clear!
 
 And then I disconnected from the instance, and everything went dark.
 
@@ -91,7 +90,7 @@ My bot needed to do two things: it needed to be __interactive and responsive__, 
 
 The interactivity comprised of connecting to the Discord WebSocket gateway, listening to messages, and responding when necessary, sometimes asynchronously.
 
-I say asynchronously because some responses will not always be a direct "response" to a user message. For example, the minecraft server may crash, due to no user action, or it may take a long time to start up after you asked it to boot. So we need to be able to send messages at any time, not just in "response" to a user's message.
+I say asynchronously because some responses will not always be a direct "response" to a user message. For example, the Minecraft server may crash, due to no user action, or it may take a long time to start up after you asked it to boot. So we need to be able to send messages at any time, not just in "response" to a user's message.
 
 Disgord takes care of the connection to the gateway, and exposes a simple api to listen and respond to messages.
 
@@ -143,7 +142,7 @@ func MakeBotManager(serverRequests chan<- *defs.ServerRequestOp, discordResponse
 }
 ```
 
-Here we create the "bot manager", given a channel to send requests to our minecraft server (`serverRequests`) and a channel that receives custom messages that we want to send _back_ to the discord server (`discordResponses`).
+Here we create the "bot manager," given a channel to send requests to our Minecraft server (`serverRequests`) and a channel that receives custom messages that we want to send _back_ to the discord server (`discordResponses`).
 
 By using the disgord api `client.On(...)`, we're able to pass our `handleMessage` function and listen to messages that users send in our discord server.
 
@@ -194,23 +193,57 @@ func MakeServerManager(serverRequests <-chan *defs.ServerRequestOp, discordRespo
 }
 ```
 
-Where we made a "bot manager" for interactivity, we make a "server manager" for actions associated with our minecraft server given the same two channels in the previous case.
+Where we made a "bot manager" for interactivity, we make a "server manager" for actions associated with our Minecraft server given the same two channels in the previous case.
 
-We kick off another goroutine with an infinite loop here, and use Go's concurrent `select` statement to wait until we get a message from `serverRequests`-- which are kicked off by user messages, as we saw earlier-- or from `serverResponses`-- a channel that describes an update to our minecraft server, like the asynchronous updates mentioned earlier. These are created by the server itself, like a crash.
+We kick off another goroutine with an infinite loop here, and use Go's concurrent `select` statement to wait until we get a message from `serverRequests`-- which are kicked off by user messages, as we saw earlier-- or from `serverResponses`-- a channel that describes an update to our Minecraft server, like the asynchronous updates mentioned earlier. These are created by the server itself, like a crash.
 
-The actual "server", meaning the Java program that creates our networked minecraft world, is abstracted in our `serverManager` struct. It is the "owner" of the `serverResponses` channel; it's the one who sends the messages to that channel on updates.
+The actual "server," meaning the Java program that creates our networked Minecraft world, is abstracted in our `serverManager` struct. It is the "owner" of the `serverResponses` channel; it's the one who sends the messages to that channel on updates.
 
 But the logic-- the _useful_ part-- that is invoked in each case, is pretty spare, isn't it?
 
 That's because we separate the actual _implementation_ of each action (of which there are many), with the plumbing of _receiving and dispatching_ those actions.
 
-The actions for for requests and responses are defined in the two maps, `serverRequestActions` and `serverResponseActions` (who ever said naming things was hard?), and the looked-up action is invoked afterwards: `responseMsg := action(serverManager, args)`.
-
-Those actions define what our bot actually _does_, which include things like: create a new world, start a world, stop a running world, kill it instead, get the status and recent logs of our minecraft server; anything you'd need to manage our digital world. It'd be tedious to go through them all, but if you're interested, each action is implemented [here](https://github.com/matthewdavidrodgers/dbot-mk2/blob/master/mcserver/actions.go).
+The actions for requests and responses are defined in the two maps, `serverRequestActions` and `serverResponseActions` (who ever said naming things was hard?), and the looked-up action is invoked afterwards: `responseMsg := action(serverManager, args)`.
 
 We always respond immediately to a request for an action; it's good UX to ensure the user knows that their actions are acknowledged, so we pop the result message (`responseMsg`) back to the discord server.
 
-It is time to finally see how we _actually_ start up a Java minecraft server from this Go bot. Let's take a look at `startServer`, a function that's called by the action for "!bb start \<world name\>".
+The actions stored in our two maps define what our bot actually _does_, which includes things like: creating a new world, starting a world, stopping a running world, killing it instead, getting the status and recent logs of our Minecraft server; anything you'd need to manage our digital world. It'd be tedious to go through them all, but if you're interested, each action is implemented [here](https://github.com/matthewdavidrodgers/dbot-mk2/blob/master/mcserver/actions.go). Instead, we're just going to look at the action for starting the server.
+
+```go
+var startServerRequestAction = func(m *manager, args map[string]string) string {
+	if m.state == running || m.state == starting {
+		return "ERROR: server is already running; you cannot start it"
+	} else if m.state == stopping {
+		return "ERROR: server is shutting down; wait for it to stop before restarting it"
+	}
+
+	requestedWorld, ok := args["_unnamed"]
+	if !ok {
+		return "ERROR: world name is missing. please supply as an unnamed option after the command. i.e. \"!bb start _my-world_\""
+	}
+	worldIsValid := false
+	worlds, _ := getWorlds()
+	for _, world := range worlds {
+		if world.name == requestedWorld {
+			worldIsValid = true
+			break
+		}
+	}
+	if !worldIsValid {
+		return "ERROR: requested world is not valid. please supply an existing world or create a new one"
+	}
+
+	m.state = starting
+	m.server = startServer(m.serverResponses, requestedWorld)
+	return "SERVER IS STARTING. WAIT FOR START MESSAGE TO JOIN."
+}
+```
+
+You can see a lot of stateful logic here; we check if the server state is running or starting, or maybe stopping. If you're trying to start a server with a world that doesn't exist, we exit out early too. These actions work sort of like a state machine for the logic of our bot, and return with the `responseMsg`, the useful message that gets passed back to the Discord server.
+
+There are two function calls in our action: `getWorlds()`, and `startServer()`. Any action that does anything useful calls something similar; initiates an "effect." These effects do things like read from the disk, create a new Minecraft world, and-- of course-- start and stop server processes.
+
+It is time to finally see how we _actually_ start up a Java Minecraft server from this Go bot. Let's take a look at `startServer`, one of the effects called by our action.
 
 ```go
 func startServer(notify chan<- *defs.ServerResponseOp, world string) *server {
@@ -292,13 +325,13 @@ There's a lot going on here, including three goroutines kicked off from this one
 
 The first thing we do is create a shell command, as provided by the "os/exec" package in Go's standard library.
 
-If it looks like we just calling Java with the server.jar file, it's because we are! Not too tough after all.
+If it looks like we just calling Java with the server.jar file, it's because we are! Not too complicated after all.
 
 But there's a lot more happening here. The first thing to notice is that we're running the output of this command (stderr and stdout) to a logfile (we call it "bb-logs").
 
 In our first goroutine, we kick off the server, and once it's finished (after any amount of time that we play), we close our logfile and notify that the server stopped with a `serverResponseOp`.
 
-In our second goroutine (which, remember, kicks off concurrently with the first one), kicks off an infinite loop that repeatedly creates a new shell command. It's arcane bash-speak, but what it translates to is: "has port 25565 been bound?".
+In our second goroutine (which, remember, kicks off concurrently with the first one), kicks off an infinite loop that repeatedly creates a new shell command. It's arcane bash-speak, but what it translates to is: "has port 25565 been bound?"
 
 We ask this because our server may take a long time to start up. And we know it's finished when it's actually bound to port 25565, meaning it's listening to network traffic. Once we're good to go, we send an update to a local channel: `portPollSucceeded`.
 
@@ -306,9 +339,9 @@ Before we look at the third goroutine, we should note that we return a pointer t
 
 Now we can take a look at that third goroutine. Another loop and select, this time selecting between `portPollSucceeded` and `abortPortPolling`. Whichever happens first lets us know what occurred: either we bound to the port successfully and can notify the discord that our server is running, or we've bailed out early after a kill command (which we respond to separately in the kill action).
 
-And there we have it! Our bot can start our Java minecraft server as needed!
+And there we have it! Our bot can start our Java Minecraft server as needed!
 
-There are of course similar functions to startServer that handle the stopping and log checking, but they're just extensions of the concepts shown above.
+There are of course similar effect functions to startServer that handle the stopping and log checking, but they're just extensions of the concepts shown above.
 
 ## Final bits
 
@@ -322,7 +355,9 @@ There are still drawbacks that I have yet to resolve, the first of which being t
 
 I had trouble with the pipes of the exec'd command and the logfile I was writing them to. Piping directly to the logfile worked fine, but trying to buffer them at all, so that I could check them and report to the discord server on request, proved to be a challenge I didn't quite understand. I expect more work with Go to get me there, but I was ok giving up on that front for this project.
 
-The other piece that's not quite there is the reliability of the minecraft server on my cloud instance. Extended play times would sometimes cause the server to choke and crash, especially with four or more players all playing at once.
+And while I got to know a lot of the ins and outs of writing Go software, one piece that I consciously skipped over was testing. There are no tests for our bot, meaning I don't have a lot of confidence that my bot will always perform the way I think it will. I'd like to write a test suite-- if only for the practice-- but since our stakes were so low, I was ok with moving along without one.
+
+The other piece that's not quite there is the reliability of the Minecraft server on my cloud instance. Extended play times would sometimes cause the server to choke and crash, especially with four or more players all playing at once.
 
 For the most part, this hasn't been a huge issue, as we all play very casually, and the amount of time it takes to hit that threshold is usually where we start getting bored, but it is a clear weak point in the infrastructure.
 
@@ -332,10 +367,10 @@ We're not opposed to the option, but for now, I think everyone's quite happy wit
 
 And the state of things is quite exciting! No part of this project has been especially challenging, and if you wanted to make this even simpler, there are plenty of libraries for interacting with the Discord gateway written in Python, Javascript, and pretty much any other language you're comfortable in.
 
-The real power comes when you give your bot something to _do_. In our case, we wanted our bot to manage a cloud minecraft server.
+The real power comes when you give your bot something to _do_. In our case, we wanted our bot to manage a cloud Minecraft server.
 
 But what if you wanted to pass an input string to a trained machine learning model, and have it [generate a fantasy story with that input](https://www.robinsloan.com/notes/writing-with-the-machine/)? What if you wanted to [kick off a torrent download](https://blog.jse.li/posts/torrent/) of a given .torrent file and paste back a hosted link in an AWS S3 bucket?
 
-Hosting a minecraft server is just one example of what's possible with these tools, and I don't think for one second that this will be my only project to use them.
+Hosting a Minecraft server is just one example of what's possible with these tools, and I don't think for one second that this will be my only project to use them.
 
 Thanks for giving this a read! You can check out all the code for the bot [here](https://github.com/matthewdavidrodgers/dbot-mk2).
