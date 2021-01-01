@@ -10,6 +10,19 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', Helvetica, sans-serif;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+h2 {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+strong {
+  font-weight: bold;
+}
+
 /* basic layout */
 .page {
   max-width: 900px;
@@ -20,6 +33,7 @@ h1, h2, h3, h4, h5 {
 /* header styles */
 header {
   font-family: 'Poppins', Helvetica, sans-serif;
+  font-weight: 900;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -101,7 +115,14 @@ article img {
 .highlight > pre {
   padding: 10px;
   border-radius: 8px;
+  overflow-x: auto;
 }
+
+/* .highlight > pre > code.language-go {
+  tab-size: 8;
+  -o-tab-size: 8;
+  -moz-tab-size: 8;
+} */
 
 /* page specific styles */
 #posts .link-list {
