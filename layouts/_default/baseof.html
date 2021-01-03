@@ -16,6 +16,16 @@
     <link rel="manifest" href="{{ relURL `manifest.json` }}">
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("{{ relURL `serviceWorker.js` }}")
+          .catch(error => {
+            console.error("Service Worker registration failer", error);
+          });
+      }
+    </script>
   </head>
   <body>
     <div class="page">
