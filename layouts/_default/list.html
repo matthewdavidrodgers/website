@@ -1,7 +1,7 @@
 {{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-  <main id="{{ .Title }}">
+  <main class="pages" id="{{ .Title }}">
     <ul class="link-list">
       {{ range .Pages }}
         <li>

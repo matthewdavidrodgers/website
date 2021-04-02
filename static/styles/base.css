@@ -46,6 +46,10 @@ nav {
   margin-top: 20px;
 }
 
+nav > a:not(:last-of-type) {
+  padding-right: 8px;
+}
+
 /* logo styles */
 .logo, .logo > a {
   font-size: 34px;
@@ -125,31 +129,31 @@ article img {
 } */
 
 /* page specific styles */
-#posts .link-list {
+.pages .link-list {
   padding: 0;
 }
 
-#posts .link-list > li {
+.pages .link-list > li {
   display: block;
   margin-bottom: 1.5em;
 }
 
-#posts .link-list > li > a {
+.pages .link-list > li > a {
   text-decoration: none;
 }
 
-#posts .link-list > li .link-header {
+.pages .link-list > li .link-header {
   display: flex;
   flex-direction: column;
 }
 
-#posts .link-list > li .link-title {
+.pages .link-list > li .link-title {
   flex: 1;
   font-size: 26px;
   text-decoration: underline;
 }
 
-#posts .link-list > li .link-desc {
+.pages .link-list > li .link-desc {
   font-size: 18px;
   text-decoration: none;
 }
@@ -185,7 +189,7 @@ article img {
     margin-right: 20px;
   }
 
-  #posts .link-list > li .link-header {
+  .pages .link-list > li .link-header {
     flex-direction: row;
     align-items: baseline;
   }
