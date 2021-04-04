@@ -1,7 +1,7 @@
 ---
 title: "Entry 1"
-date: 2021-04-03T15:26:54-07:00
-draft: true
+date: 2021-05-03T15:26:54-07:00
+draft: false
 ---
 
 {{< aside >}} This is an entry in The Logbook - you can read more about what these are [here](/posts/logbook) {{< /aside >}}
