@@ -4,7 +4,7 @@ date: 2021-04-03T15:26:54-07:00
 draft: true
 ---
 
-This is my first official log - you can read more about what these are [here](/posts/logbook).
+{{< aside >}} This is an entry in The Logbook - you can read more about what these are [here](/posts/logbook) {{< /aside >}}
 
 The week hasn't been extraordinarily stressful, but I decided to give myself a bit of a break anyway and took a spontaneous weekend trip to Joshua Tree. Since I'm on my own, I'm not being too adventurous, but it's gritty and gorgeous out here. I rewatched Paris, Texas recently, and I feel a lot of the same emotions as I did watching the first half of that movie. You can almost hear the [slide guitar](https://www.youtube.com/watch?v=drg0LMfIkfU) from the soundtrack.
 

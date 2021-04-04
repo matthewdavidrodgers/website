@@ -122,6 +122,16 @@ article img {
   overflow-x: auto;
 }
 
+/* aside styles */
+aside {
+  font-style: italic;
+  font-size: 16px;
+  opacity: .7;
+  border-left: 2px solid rgba(0,0,0,.7);
+  padding: 3px 9px 3px;
+  background-color: #efefef;
+}
+
 /* .highlight > pre > code.language-go {
   tab-size: 8;
   -o-tab-size: 8;
