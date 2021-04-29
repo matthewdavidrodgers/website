@@ -23,3 +23,8 @@
   to = "/"
 
   status = 302
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
