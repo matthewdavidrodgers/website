@@ -151,6 +151,7 @@ aside {
 
 .pages .link-list > li > a {
   text-decoration: none;
+  appearance: auto;
 }
 
 .pages .link-list > li .link-header {
@@ -167,19 +168,6 @@ aside {
 .pages .link-list > li .link-desc {
   font-size: 18px;
   text-decoration: none;
-}
-
-.pages .link-list > li .link-header,
-.pages .link-list > li .link-title,
-.pages .link-list > li .link-desc {
-  opacity: 0.5;
-  transition: opacity 275ms ease-out;
-}
-
-.pages .link-list > li:hover .link-header,
-.pages .link-list > li:hover .link-title,
-.pages .link-list > li:hover .link-desc {
-  opacity: 1;
 }
 
 /* desktop overrides */
