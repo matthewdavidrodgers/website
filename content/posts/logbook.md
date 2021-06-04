@@ -2,6 +2,7 @@
 title: "The Logbook"
 date: 2021-04-01T16:35:44-07:00
 draft: false
+summarizable: true
 ---
 
 Recently, I've taken a lot of joy in reading the personal weekly notes that I see authors on the web publishing. I'm not sure if it's a recent fad in blogging, or if I'm only just getting exposed to a common practice.

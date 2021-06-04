@@ -2,6 +2,7 @@
 title: "Managing a cloud Minecraft server from a Discord chatbot"
 date: 2020-12-31T19:58:32-05:00
 draft: false
+summarizable: true
 ---
 
 ![Logos (Minecraft, Amazon Web Services, Discord, Go)](/images/bot-logos-raw.png)

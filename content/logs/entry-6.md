@@ -2,6 +2,7 @@
 title: "Entry 6"
 date: 2021-05-09T16:26:37-07:00
 draft: false
+summarizable: false
 ---
 
 {{< aside >}} This is an entry in The Logbook - you can read more about what these are [here](/posts/logbook) {{< /aside >}}
