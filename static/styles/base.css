@@ -121,6 +121,11 @@ article img {
   padding: 10px;
   border-radius: 8px;
   overflow-x: auto;
+  font-family: inherit;
+}
+
+.highlight > pre > code {
+  font-family: inherit;
 }
 
 /* aside styles */
