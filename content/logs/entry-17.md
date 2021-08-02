@@ -26,3 +26,5 @@ To close out, I watched a great [talk](https://www.youtube.com/watch?v=3VQ382QG-
 The talk is "in javascript", but that's really the least interesting part of the talk. Any language with first-class functions (and dynamic typing) suffices here.
 
 This [article](https://httptoolkit.tech/blog/safari-is-killing-the-web/) about Safari killing the web is also a good read. Some of it is certainly hyperbolic and maybe unfair, but there's no doubt that Safari's poor support for a lot of web standards is a real pain point. And yet, at the same time, they're really the only force holding out against chromium, which makes me want to root for them until the end.
+
+Also to note! Bob Nystrom has officially published a real life book version of his FANTASTIC [Crafting Interpreters](https://craftinginterpreters.com/) that I will be shortly picking up! This was a really important spark for me, in my interest in programming language design, experience in actual C codebases, and just general excitement in computer science again. Congrats to Bob on all the hard work.
