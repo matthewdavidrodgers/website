@@ -54,7 +54,7 @@ One of the stupidest things I repeatedly ran into was uninitialized variables. I
 
 I'm sure there was a valid reason for this behavior for compilers in the 70s. But good LORD does this make no sense today. And it creeps up ALL over the place.
 
-To make matters work, I was trying to code according to the C89 standard, which has an additional restriction about variable declaration: all variable declarations must come at the beginning of a function, before any other statements, presumably so the compiler can set aside storage on the stack.
+To make matters worse, I was trying to code according to the C89 standard, which has an additional restriction about variable declaration: all variable declarations must come at the beginning of a function, before any other statements, presumably so the compiler can set aside storage on the stack.
 
 ```c
 // a function like this
