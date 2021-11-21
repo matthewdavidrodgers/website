@@ -261,9 +261,10 @@ int main()
     cyphertext_b = base64_file_cyphertext(DATA_FILENAME);
     
 #ifdef DEBUG_VERBOSE
-    // bbuf_print_hex prints the contexts of a buffer
-    // in a human-readable hex format
-    bbuf_print_hex(&cyphertext_b);
+    // bbuf_print prints the contexts of a buffer
+    // in a human-readable format
+    // BBUF_HEX specifies to print in hex
+    bbuf_print(&cyphertext_b, BBUF_HEX);
 #endif
 
     // decode_rk_xor solves repeating key xor for a buffer
@@ -278,9 +279,9 @@ int main()
            keytext, plaintext, result.score);
 #ifdef DEBUG_VERBOSE
     printf("\tkey: ");
-    bbuf_print_hex(&result.key_buffer);
+    bbuf_print(&result.key_buffer, BBUF_HEX);
     printf("\tplaintext: ");
-    bbuf_print_hex(&result.plaintext_buffer);
+    bbuf_print(&result.plaintext_buffer, BBUF_HEX);
 #endif
 
     free(keytext);
@@ -313,16 +314,15 @@ typedef struct {
     uint8_t *buf;
 } bbuf;
 
+typedef enum { BBUF_DECIMAL, BBUF_HEX, BBUF_GRID, BBUF_GRID_ASCII } bbuf_print_format;
+
 bbuf bbuf_new();
 void bbuf_init(bbuf *bbuffer);
 void bbuf_init_to(bbuf *bbuffer, size_t size);
 void bbuf_append(bbuf *bbuffer, uint8_t b);
 void bbuf_slice(bbuf *dst_bbuffer, bbuf *src_bbuffer, size_t start, size_t end);
 void bbuf_destroy(bbuf *bbuffer);
-void bbuf_print(bbuf *bbuffer);
-void bbuf_print_hex(bbuf *bbuffer);
-void bbuf_dump(bbuf *bbuffer);
-void bbuf_dump_ascii(bbuf *buffer);
+void bbuf_print(bbuf *bbuffer, bbuf_print_format format);
 ```
 
 I won't show the implementation of these methods, but I was quite happy with how it felt to use this api. I can credit a lot of this to the "chunks" struct and api in Bob Nystrom's "Crafting Interpreters", a very helpful reference material for a lot of my work here.
