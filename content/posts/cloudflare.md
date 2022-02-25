@@ -19,7 +19,7 @@ When I started looking for the next step in my career, I decided that I'd swing 
 
 I knew that it was setting my sights fairly high. But I wanted to really go for it before I started applying to roles that I knew would be an easy fit. And when I talked to my friends about it, I had in my head some sort of web infrastructure company. And the first company on that list was always Cloudflare.
 
-So to be heading to Cloudflare at the beginning of next month is nothing sort of a home run! 
+So to be heading to Cloudflare at the beginning of next month is nothing short of a home run! 
 
 I'm really excited about my team; to me, Cloudflare Workers represent the most interesting application of serverless architectures yet. Sure, conceptually, the idea of abstracting everything away except code is a very exciting innovation in cloud computing. But what truly sets Cloudflare's platform apart is the global network that it sits on.
 
