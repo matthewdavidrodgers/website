@@ -141,6 +141,15 @@ aside {
   background-color: #efefef;
 }
 
+/* centered-container styles */
+.centered-container {
+  text-align: center;
+}
+
+.centered-container {
+  margin: auto;
+}
+
 /* .highlight > pre > code.language-go {
   tab-size: 8;
   -o-tab-size: 8;
