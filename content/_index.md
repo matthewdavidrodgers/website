@@ -6,4 +6,4 @@ draft: false
 
 Software engineer. Is this thing on?
 
-Born and raised in Charleston, South Carolina. Undergraduate degree in computer science at Clemson University. Full stack developer at Creative Artists Agency in Los Angeles, California.
+Born and raised in Charleston, South Carolina. Undergraduate degree in computer science at Clemson University. Systems engineer at Cloudflare. Based in Los Angeles, California.
