@@ -1,7 +1,7 @@
 ---
 title: "Entry 40"
 date: 2022-04-10T17:34:01-07:00
-draft: true
+draft: false
 summarizable: false
 ---
 
